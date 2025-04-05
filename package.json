@@ -9,7 +9,7 @@
     "type": "git",
     "url": "https://github.com/ulloacastillo/file-tree-gen"
   },
-  "version": "0.0.3",
+  "version": "0.0.4",
   "engines": {
     "vscode": "^1.91.1"
   },
