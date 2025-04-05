@@ -4,6 +4,10 @@
   "description": "Generate and visualize file trees from folders in VS Code",
   "author": "Jorge Ulloa Castillo",
   "publisher": "JorgeUlloaCastillo",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ulloacastillo/file-tree-gen"
+  },
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.98.0"
