@@ -1,9 +1,10 @@
 {
   "name": "file-tree-gen",
-  "displayName": "File Tree Generator",
+  "displayName": "Easy File Tree Generator",
   "description": "Generate and visualize file trees from folders in VS Code",
   "author": "Jorge Ulloa Castillo",
   "publisher": "JorgeUlloaCastillo",
+  "icon": "media/icon-file-tree.png",
   "repository": {
     "type": "git",
     "url": "https://github.com/ulloacastillo/file-tree-gen"
