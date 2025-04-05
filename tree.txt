@@ -1,0 +1,27 @@
+file-tree-gen
+    ├── .vscode
+    │   ├── extensions.json
+    │   ├── launch.json
+    │   ├── settings.json
+    │   └── tasks.json
+    ├── src
+    │   ├── test
+    │   │   ├── fileTreeView.test.ts
+    │   │   └── index.ts
+    │   ├── utils
+    │   │   └── fileTreeGenerator.ts
+    │   ├── views
+    │   │   └── fileTreeView.ts
+    │   └── extension.ts
+    ├── .gitignore
+    ├── .vscode-test.mjs
+    ├── .vscodeignore
+    ├── CHANGELOG.md
+    ├── diagrams.md
+    ├── eslint.config.mjs
+    ├── package-lock.json
+    ├── package.json
+    ├── README.md
+    ├── tsconfig.json
+    ├── use-cases.md
+    └── vsc-extension-quickstart.md

@@ -1,0 +1,117 @@
+{
+  "name": "file-tree-gen",
+  "displayName": "File Tree Generator",
+  "description": "Generate and visualize file trees from folders in VS Code",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.98.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:file-tree-gen.generateFileTree",
+    "onCommand:file-tree-gen.saveFileTree",
+    "onCommand:file-tree-gen.copyFileTree"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "file-tree-gen.generateFileTree",
+        "title": "Generate File Tree"
+      },
+      {
+        "command": "file-tree-gen.saveFileTree",
+        "title": "Save File Tree"
+      },
+      {
+        "command": "file-tree-gen.copyFileTree",
+        "title": "Copy File Tree to Clipboard"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "when": "explorerResourceIsFolder",
+          "command": "file-tree-gen.generateFileTree",
+          "group": "navigation"
+        },
+        {
+          "when": "explorerResourceIsFolder",
+          "command": "file-tree-gen.saveFileTree",
+          "group": "navigation"
+        },
+        {
+          "when": "explorerResourceIsFolder",
+          "command": "file-tree-gen.copyFileTree",
+          "group": "navigation"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "File Tree Generator",
+      "properties": {
+        "fileTreeGen.excludePatterns": {
+          "type": "array",
+          "default": [
+            "node_modules",
+            ".git",
+            "dist",
+            "build"
+          ],
+          "description": "Patterns to exclude from the file tree"
+        },
+        "fileTreeGen.maxDepth": {
+          "type": "number",
+          "default": -1,
+          "description": "Maximum depth of the file tree (-1 for unlimited)"
+        },
+        "fileTreeGen.useGitignore": {
+          "type": "boolean",
+          "default": true,
+          "description": "Use .gitignore files to exclude files and folders"
+        },
+        "fileTreeGen.defaultFormat": {
+          "type": "string",
+          "enum": [
+            "text",
+            "markdown",
+            "json"
+          ],
+          "default": "text",
+          "description": "Default format for the file tree"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/glob": "^7.2.0",
+    "@types/minimatch": "^3.0.5",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@types/sinon": "^17.0.4",
+    "@types/vscode": "^1.98.0",
+    "@typescript-eslint/eslint-plugin": "^8.25.0",
+    "@typescript-eslint/parser": "^8.25.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1",
+    "eslint": "^9.21.0",
+    "glob": "^7.2.0",
+    "minimatch": "^3.1.2",
+    "mocha": "^11.1.0",
+    "sinon": "^19.0.2",
+    "typescript": "^5.7.3"
+  },
+  "dependencies": {
+    "ignore": "^5.3.2"
+  }
+}
